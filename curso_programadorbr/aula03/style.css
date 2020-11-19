@@ -1,0 +1,24 @@
+div#cartao{
+    background-image: url(images/backgorund.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 400px;
+    height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 5vmin;
+    
+}
+
+li#insta{
+    list-style: url(images/Insta.png);
+}
+
+li#twitter{
+    list-style: url(images/Twitter.png);
+}
+
+li#youtube{
+    list-style: url(images/Youtube.png);
+}
+

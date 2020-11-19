@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página primeria</title>
+    <style>
+        p{
+            border: seagreen;
+            font-size: large;
+            border-inline-width: inherit;
+            background-color: lawngreen;
+        }
+    </style>
+    <link rel="stylesheet" href="css_teste.css">
 </head>
 <body>
+    <a href="#carros">Carros na página</a> <br>
     <a href="teste01.html">Sobre mim</a>
     <h1>Título</h1>
     <h2>Sub-título</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nam voluptates labore voluptate dignissimos repudiandae vel delectus sit, est vitae reprehenderit adipisci ullam fugit, quisquam veritatis porro qui tempore veniam?</p>
-    <p>Texto <strong>em negrito</strong></p>
-    <p>Texto <em>em itálico</em></p>
+    <p style="color: rgb(219, 232, 233); background-color: rgb(28, 17, 94);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nam voluptates labore voluptate dignissimos repudiandae vel delectus sit, est vitae reprehenderit adipisci ullam fugit, quisquam veritatis porro qui tempore veniam?</p>
+    <p id="primeiro">Texto <strong>em negrito</strong></p>
+    <p class="outro">Texto <em>em itálico</em></p>
     <p>Texto <mark>com marcação</mark></p>
     <p>Texto <small>pequeno</small></p>
     <p>Texto <del>removido</del></p>
@@ -22,6 +32,7 @@
     <!--Isso é um comentário-->
 
     <a href="sobre.html">About us</a>
+    <a href="#">Teste</a>
     
     <div>
         <a href="https://www.pexels.com/pt-br/foto/anonimo-antiguidade-brilhante-luminoso-5635100/"
@@ -38,7 +49,7 @@
         <li>Maçãs</li>
         <li>Pêssego</li>
     </ul>
-    <ol type="1">
+    <ol id="carros" type="1">
         <li>Ford
             <ol>
                 <li>Escort</li>
@@ -69,5 +80,33 @@
 
     <br><br><br><br>
 
+    <div id='cm'></div>
+    <div id='mm'></div>
+    <div id='in'></div>
+    <div id='px'></div>
+    <div id='pt'></div>
+    <div id="pc"></div>
+
+    Texto no body 
+    
+    <div class="container">
+        Texto no container
+        <div class="inside">
+            Texto no inside
+        </div>
+    </div>
+
+    <div id="base"></div>
+    <div id="container">
+        <div id="conteudo">
+            Texto um
+        </div>
+    </div>
+
+    Outro texto
+
+    <p id='teste_fonte'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam culpa vero facilis consequatur deserunt quos vel id ducimus labore porro dolore, non nisi sunt at tenetur officiis odio dolorem voluptatibus!</p>
+
+<br><br><br><br><br><br>
 </body>
 </html>

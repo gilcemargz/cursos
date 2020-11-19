@@ -1,0 +1,96 @@
+p{
+    color: crimson;
+}
+
+p#primeiro{
+    background-color: darkgreen;
+}
+
+p.outro{
+    background-color: darkmagenta;
+}
+
+#cm{
+    width: 1cm;
+    height: 1cm;
+    background-color: black;
+}
+
+#mm{
+    width: 5mm;
+    height: 5mm;
+    background-color: red;
+}
+
+#in{
+    width: 1in;
+    height: 1in;    
+    background-color: greenyellow;
+}
+
+#px{
+    width: 5px;
+    height: 5px;
+    background-color: blue;
+}
+
+#pt{
+    width: 5pt;
+    height: 5pt;
+    background-color: rgb(255, 0, 0);
+}
+
+#pc{
+    width: 1pc;
+    height: 1pc;
+    background-color: rgb(0, 255, 42);
+}
+
+.container{
+    font-size: 25px;
+    /*width: 300px;*/
+    width: 50vw;
+    background-color: red;
+    
+}
+
+.inside{
+    font-size: 2em;
+    width: 80%;
+    background-color: blue;
+}
+
+#container{
+    background-color: yellow;
+    margin: 10px;
+    padding: 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+    border-radius: 100vw;
+
+}
+
+#base{
+    height: 10px;
+    background-color: rebeccapurple;
+}
+
+#teste_fonte{
+    background-color: white;
+    color: black;
+
+    font-family: arial, "Comic Sans MS", sans-serif;    
+    font-style: italic;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+a:visited{
+    text-decoration: none;
+    color: red;
+    font-size: xx-large;
+    cursor: pointer;
+    background-color:black;
+}

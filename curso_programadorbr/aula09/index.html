@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador</title>
+    <script>
+        
+        var cor = 0
+
+        function inicioPagina(){
+            var inicio = document.querySelector("#min")
+            var max = document.querySelector("#max")
+
+            inicio.value = localStorage.getItem(inicio.id)
+            max.value = localStorage.getItem(max.id)
+            setInterval(mudarCor, 1)
+            
+        }
+
+        function sortear(){
+            var inicio = document.querySelector("#min")
+            var fim = document.querySelector("#max")
+
+            inicio = Number(inicio.value)
+            fim = Number(fim.value)
+            var dif = fim - inicio
+            var result 
+            var total = 0
+            while (result != inicio) {
+                result = Math.round(( Math.random()  * dif)) + inicio    
+                console.log(result)
+                total++
+            }
+            
+            console.log(`Terminou precisando de ${total}`)
+
+        }
+
+        function guardar(element){
+            var elementID = element.id
+
+            localStorage.setItem(elementID, element.value)
+        }
+
+        function mudarCor(){
+            var h = document.querySelector("h1")
+            h.style.backgroundColor = "#"+ cor.toString(16)
+            cor += 1
+            console.log(cor.toString(16))
+        }
+
+    </script>
+</head>
+<body onload="inicioPagina()">
+
+    
+    <input type="number" name="min" id="min" oninput="guardar(this)">
+    <br>
+    <input type="number" name="max" id="max" oninput="guardar(this)">
+    <br>
+    <button onclick="sortear()">Sortear</button>
+    <h1 >Titulo Grande</h1>
+    
+</body>
+</html>

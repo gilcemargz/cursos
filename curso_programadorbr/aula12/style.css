@@ -1,9 +1,13 @@
+:root{
+    --var-color: red;
+}
+
 p::first-line{
-    color: red;
+    color: var(--var-color);
 }
 
 h1::first-letter{
-    color: red;
+    color: var(--var-color);
     font-size: 200%;
 }
 
@@ -13,5 +17,9 @@ li{
 
 li::before{
     content: "A - ";
+}
+
+input:focus{
+    color: var(--var-color);
 }
 

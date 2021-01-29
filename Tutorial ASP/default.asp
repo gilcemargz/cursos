@@ -191,5 +191,65 @@
         
     </p>
 
+    <form action="#" method="post">
+        Your name: <input type="text" name="fname" size="20" />
+        <input type="submit" value="Submit" />
+    </form>
+    <%
+    dim fname
+    fname=Request.QueryString("fname")
+    fname=Request.Form("fname")
+    If fname<>"" Then
+        Response.Write("Hello " & fname & "!<br>")
+        Response.Write("How are you today?")
+    End If
+    %>
+
+    <%
+        Response.Cookies("firstname")="Alex"
+    %>
+
+    </br>
+    <%
+        fname=Request.Cookies("firstname")
+        response.write("Firstname=" & fname)
+    %>
+
+    <p>
+        <%
+            Response.Cookies("user")("firstname")="John"
+            Response.Cookies("user")("lastname")="Smith"
+            Response.Cookies("user")("country")="Norway"
+            Response.Cookies("user")("age")="25"
+        %>
+    </p>
+
+    <%
+    dim y
+    for each x in Request.Cookies
+    response.write("<p>")
+    if Request.Cookies(x).HasKeys then
+        for each y in Request.Cookies(x)
+        response.write(x & ":" & y & "=" & Request.Cookies(x)(y))
+        response.write("<br>")
+        next
+    else
+        Response.Write(x & "=" & Request.Cookies(x) & "<br>")
+    end if
+    response.write "</p>"
+    next
+    %>
+
+    <%
+        dim myMail
+        Set myMail = CreateObject("CDO.Message")
+        myMail.Subject = "Sending email with CDO"
+        myMail.From = "gilcemargz@hotmail.com"
+        myMail.To = "gilcemargz@gmail.com"
+        myMail.TextBody = "This is a message."
+        myMail.Send
+        set myMail = nothing
+    %>
+
 </body>
 </html>

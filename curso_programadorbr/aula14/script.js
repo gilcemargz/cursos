@@ -71,5 +71,7 @@ fetch(url)
   })
   .then((data) => {
     //document.write(data);
+    document.write(data.rates.BRL);
     console.log(data);
+    console.log(data.rates.BRL);
   });

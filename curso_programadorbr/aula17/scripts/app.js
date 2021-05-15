@@ -9,10 +9,88 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+//firebase.analytics();
 
 let db = firebase.firestore();
 const TURMAA = "turmaA";
+
+let email = "gilcemargz@email.com";
+let password = "123abc";
+
+function criarUsuario(params) {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      console.log(userCredential);
+      var user = userCredential.user;
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error);
+    });
+}
+
+function login() {
+  
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(() => {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+  
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      console.log(userCredential);
+      // ...
+    })
+    .then((log) => {
+      console.log("Usuário logado" + firebase.auth().currentUser);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error);
+    });
+}
+
+//login();
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("Sou eu" + user);
+  } else {
+    console.log("Nada logad");
+  }
+});
+
+function logout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log("Deslogado");
+    });
+}
+
+//setTimeout(logout, 5000);
+
+//setTimeout(login, 9000);
+
 /*
 db.collection(TURMAA).onSnapshot((snapshot) => {
   snapshot.forEach((element) => {
@@ -45,7 +123,7 @@ db.collection("turmaA")
     });
   });
 
-  */
+  
 function notaRandomica() {
   return Math.round(Math.random() * 100) * 0.1;
 }
@@ -118,21 +196,5 @@ db.collection(TURMAA)
   });
 
 
+
 */
-var Teste = "gilece, asdf"
-
-let dicionarioDeRegras = {
-  tesoura: ['papel','lagarto'],
-  papel: ['pedra','spock'],
-  pedra: ['lagarto','tesoura'],
-  lagarto: ['spock','papel'],
-  spock: ['tesoura','pedra']
-};
-
-console.log(dicionarioDeRegras["tesoura"])
-
-if (condition) {
-  
-} else {
-  
-}

@@ -13,14 +13,14 @@ firebase.analytics();
 
 let db = firebase.firestore();
 const TURMAA = "turmaA";
-
+/*
 db.collection(TURMAA).onSnapshot((snapshot) => {
   snapshot.forEach((element) => {
     console.log(element.data());
   });
 });
 
-/*
+
 db.collection("turmaA")
   .get()
   .then((snapshot) => {
@@ -117,4 +117,22 @@ db.collection(TURMAA)
     console.log(`Ocorreu um erro ${err}`);
   });
 
+
 */
+var Teste = "gilece, asdf"
+
+let dicionarioDeRegras = {
+  tesoura: ['papel','lagarto'],
+  papel: ['pedra','spock'],
+  pedra: ['lagarto','tesoura'],
+  lagarto: ['spock','papel'],
+  spock: ['tesoura','pedra']
+};
+
+console.log(dicionarioDeRegras["tesoura"])
+
+if (condition) {
+  
+} else {
+  
+}
